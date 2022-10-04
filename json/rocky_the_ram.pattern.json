@@ -1,0 +1,75 @@
+{
+    "info": {
+        "name": "Rocky the Ram",
+        "author": "Theresa's Crochet Shop",
+        "materials": {
+            "hook_mm": 4.0,
+            "hook_us": "G",
+            "yarn": [
+                {
+                    "weight": 4,
+                    "color": "red",
+                    "application": "head/body"
+                },
+                {
+                    "weight": 4,
+                    "color": "white",
+                    "application": "muzzle"
+                },
+                {
+                    "weight": 4,
+                    "color": "off-white",
+                    "application": "horns/hooves"
+                }
+            ]
+        }
+    },
+    "pattern": {
+        "rs": [
+            {
+                "r" : 1,
+                "ch": 2,
+                "sc": [
+                    6,
+                    "in 1st chain"
+                ],
+                "sts": 6
+            },
+            {
+                "r": 2,
+                "repeat": [
+                    2,
+                    {
+                        "sc": [
+                            2,
+                            "in next single crochet"
+                        ]
+                    }
+                ],
+                "sts": 12
+            },
+            {
+                "r": 3,
+                "repeat": [
+                    [
+                        6,
+                        {
+                            "sc": [
+                                2,
+                                "in next single crochet"
+                            ]
+                        }],
+                        [2,
+                        {
+                            "hdc": [
+                                3,
+                                "in each stitch around"
+                            ]
+                        }
+                    ]
+                ]
+            }
+        ]
+    }
+}
+
