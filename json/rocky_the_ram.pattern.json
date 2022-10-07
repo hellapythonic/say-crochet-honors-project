@@ -38,7 +38,7 @@
             {
                 "r": 2,
                 "repeat": [
-                    2,
+                    6,
                     {
                         "sc": [
                             2,
@@ -47,27 +47,6 @@
                     }
                 ],
                 "sts": 12
-            },
-            {
-                "r": 3,
-                "repeat": [
-                    [
-                        6,
-                        {
-                            "sc": [
-                                2,
-                                "in next single crochet"
-                            ]
-                        }],
-                        [2,
-                        {
-                            "hdc": [
-                                3,
-                                "in each stitch around"
-                            ]
-                        }
-                    ]
-                ]
             }
         ]
     }

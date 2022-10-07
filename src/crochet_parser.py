@@ -2,6 +2,11 @@ import json
 import exceptions
 from sys import exit
 
+
+# TODO: MVC? Worth it?
+
+
+# conversions from crochet shorthand for the speech engine
 STITCH = {
     "ch": "chain",
     "sc": "single crochet",
@@ -12,6 +17,11 @@ STITCH = {
 
 
 def crochet_parse_file(filename):
+    """Parses the *.pattern.json file.
+
+    Returns a json object.
+
+    Throws IOError."""
     try:
         with open(filename, 'r') as f:
             try:
@@ -22,11 +32,17 @@ def crochet_parse_file(filename):
     except IOError as e:
         exit(1)
 
+# TODO: (Jeremy's suggestion: string buffer for concat string) :: Concatenating immutable sequences always results
+#  in a new object. This means that building up a sequence by repeated concatenation will have a quadratic runtime
+#  cost in the total sequence length. To get a linear runtime cost, you must switch to one of the alternatives below:
+#  if concatenating str objects, you can build a list and use str.join() at the end or else write to an io.StringIO
+#  instance and retrieve its value when complete.
+
 
 def read_r(pattern, idx=0) -> str:
-    # noinspection GrazieInspection
     """Reads the round or row.
-        :except PatternError"""
+
+        Raises exceptions.PatternError."""
 
     try:
         def read_stitch(stitch_key, stitch_item, repeat=0):
