@@ -5,9 +5,18 @@ from sys import exit
 
 # TODO: MVC? Worth it?
 
+# TODO: THIS SHOULD BE A CLASS PATTERN
+#       ... will allow for storage of the DEFINITIONS (need to reload each time)
+#       ... allow for lazy evaluation of the pattern?
 
-# conversions from crochet shorthand for the speech engine
-STITCH = {
+
+"""
+* default definitions of stitches and terminology;
+* allows patterns to inform the stitch definitions
+* 
+* can be overridden by *.pattern.json file
+"""
+DEFINITIONS = {
     "ch": "chain",
     "sc": "single crochet",
     "dc": "double crochet",
@@ -49,13 +58,13 @@ def read_r(pattern, idx=0) -> str:
             """Reads the stitch."""
             stitch_say_string = ""
             # print(f"{stitch_key = }, {stitch_item = }")
-            if stitch_key in STITCH.keys():
+            if stitch_key in DEFINITIONS.keys():
                 if isinstance(stitch_item, list):
                     ct = stitch_item[0]
                 else:
                     ct = stitch_item
                 print(f"{stitch_key} {ct}", end=" ")
-                stitch_say_string += f"{STITCH[stitch_key].title()} {ct}"
+                stitch_say_string += f"{DEFINITIONS[stitch_key].title()} {ct}"
                 if isinstance(stitch_item, list) and len(stitch_item) > 1:
                     # extra instructions like "in 1st chain"
                     print(stitch_item[1])
@@ -92,7 +101,7 @@ def read_r(pattern, idx=0) -> str:
                 say_string = f"Round or row {item}. "
 
             # stitch
-            if key in STITCH.keys():
+            if key in DEFINITIONS.keys():
                 say_string += read_stitch(key, item)
 
             # repeat

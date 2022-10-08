@@ -22,6 +22,13 @@
                     "application": "horns/hooves"
                 }
             ]
+        },
+        "definitions": {
+            "ch": "chain",
+            "sc": "single crochet",
+            "dc": "double crochet",
+            "tc": "triple crochet",
+            "hdc": "half double crochet"
         }
     },
     "pattern": {
