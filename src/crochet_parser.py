@@ -65,7 +65,7 @@ def crochet_parse_file(filename):
                 print(e)
                 exit(1)
     except IOError as e:
-        exit(1)
+        exit(e)
 
 # DONE: (Jeremy's suggestion: string buffer for concat string) :: Concatenating immutable sequences always results
 #  in a new object. This means that building up a sequence by repeated concatenation will have a quadratic runtime
@@ -106,8 +106,7 @@ def read_r(pattern, idx=0) -> str:
                     if isinstance(repeat, int):
                         print(f"Repeat {repeat} times.")
                     else:
-                        pass
-                        # raise exceptions.PatternError
+                        raise exceptions.PatternError
 
             return "".join(stitch_say_string)
 
